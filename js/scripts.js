@@ -26,6 +26,7 @@ $(document).ready(function() {
     toDoList.addTask(job);
     console.log(job);
    $(".output").append("<li id=fancy" +job.name+ ">" + job.name+ "</li>" + "<li>" + job.description + "</li>")
+   $(".delete").show();
   });
   $(".output").on("click", "li", function() {
     $(this).addClass("strikeThrough");
@@ -34,5 +35,9 @@ $(document).ready(function() {
     // this.removeChild(".output".firstChild);
     // $(".output li").append("<li>" + display + "</li>");
   
-  })
-})
+  });
+  $(".delete").click(function() {
+    alert("you clicked something!")
+    $(".strikeThrough").hide();
+  });
+});
